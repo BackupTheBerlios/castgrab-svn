@@ -1,0 +1,67 @@
+CastGrab 0.02
+http://www.fubarpa.com/projects/castgrab
+
+A podcast downloader in Perl
+
+Brad Peters <brad@fubarpa.com>
+
+-----------------------------------
+CastGrab is a script which will parse your subscription list
+and download any new podcasts into the directory specified in
+the script itself.  CastGrab keeps a historical file to track
+which podcasts have been downloaded.
+
+------------------------------------
+This script is free software; you can redistribute it and/or 
+modify it under the same terms as Perl itself.
+------------------------------------
+
+If this script eats your partition for breakfast, it's not my 
+fault.  RUN AT YOUR OWN RISK.  I've tested this on my machine, 
+it is still functioning.
+-----------------------------------
+
+Requirements:
+
+Perl 5.8.4
+
+Perl modules:
+XML::DOM 
+LWP::UserAgent
+
+
+Installation
+---------------------------------------
+1  Copy castgrab.pl to any directory you choose and make it
+   executeable (chmod +x castgrab.pl).
+
+2  Run the setup-castgrab.sh script to create the .castgrab
+   directory and set up the initial subscriptions and history
+   file
+
+3  Edit the subscriptions file to add your favorite podcast
+   feeds. The filename is ~/.castgrab/subscriptions.  The 
+   format for an entry is:
+
+   Description::URL
+
+   I've included one sample feed for the Dawn and Drew Show
+   as an example.
+
+4  Edit castgrab.pl and change the variables as noted in the
+   comments
+
+
+Running CastGrab
+----------------------------------------
+Castgrab can be run manually or from cron.  If you run it from
+cron, I recommend setting it to check your feeds once per day.
+
+Castgrab generates a logfile (~/.castgrab/castgrab.log) to let 
+you know what's going on.
+
+
+Comments / Bugreports / Feedback
+----------------------------------------
+Drop me an email if you have any questions, bug reports, fixes,
+or feature requests.  I'll see what I can do for you.
